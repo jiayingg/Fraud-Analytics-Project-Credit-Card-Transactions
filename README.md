@@ -146,14 +146,12 @@ We applied the same method to all the models and came up with the table below:
 <table>
   <tr>
     <th>d1 ~ d10</th>
-    <th>down sample the goods from 1/1 goods-to-bads to 10/1 goods-to-bads.</th>
+    <th>Base</th>
+    <th>v2</th>
   </tr>
   <tr>
-    <td>Base</td>
+    <td>down sample the goods from 1/1 goods-to-bads to 10/1 goods-to-bads.</td>
     <td>original training dataset, without down sample the goods, 25 independent variables</td>
-  </tr>
-  <tr>
-    <td>v2</td>
     <td>dataset from project 2, 16 independent variables</td>
   </tr>
 </table>
