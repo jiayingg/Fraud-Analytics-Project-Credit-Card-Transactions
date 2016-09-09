@@ -141,6 +141,9 @@ We calculate fraud detective rate for each model in order to know which one perf
 
 FDR@3%=(label=1 @3%)/(label=1 in Training/Testing/OOD)
 We applied the same method to all the models and came up with the table below: 
-  d1 ~ d10: down sample the goods from 1/1 goods-to-bads to 10/1 goods-to-bads.
+
+	d1 ~ d10: down sample the goods from 1/1 goods-to-bads to 10/1 goods-to-bads.
+	
 	Base: original training dataset, without down sample the goods, 25 independent variables
+	
 	v2: dataset from project 2, 16 independent variables
