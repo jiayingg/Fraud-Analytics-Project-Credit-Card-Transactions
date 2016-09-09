@@ -116,3 +116,5 @@ For entities CARDNUM and MERCHNUM, we calculated the number of transactions, the
 For the entity STATE, we calculated the percentage of transactions on a certain card that happened in the same state as the current record. We set the time frame to be in the past 1 day, since the change of location is time-sensitive. A longer time frame would be unnecessary, as it is possible and reasonable that travel occurred during a few days’ time, and a change in state that happened in the past 1 day has a much higher probability of fraud. If this variable is 100, it means that the card has only been used in one state during the past 1 day. If the variable is small, it means that only a few records happened in a different location from most, and these are anomalies that we should put focus on.
 
 Below are our variables:
+
+- \frac{90}{N}\cdot \frac{Number of transactions in the past N days on this card}{Number of transactions in the past 90 days on this card}, For N = 1, 2, 3, 7
