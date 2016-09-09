@@ -117,4 +117,30 @@ For the entity STATE, we calculated the percentage of transactions on a certain 
 
 Below are our variables:
 
-\\frac{90}{N}
+- card_scale_trans_N=(90/N)∙(Number of transactions in the past N days on this card)/(Number of transactions in the past 90 days on this card),For N = 1, 2, 3, 7
+- card_scale_amount_N=(90/N)∙( Total transaction amount in the past N days on this card)/( Total transaction amount in the past 90 days on this card), For N = 1, 2, 3, 7
+- merch_scale_trans_N=(90/N)∙(Number of transactions in the past N days from merchant)/(Number of transactions in the past 90 days from merchant), For N = 1, 2, 3, 7
+- merch_scale_amount_N=(90/N)∙( Total trans amount in the past N days from merchant)/( Total trans amount in the past 90 days from merchant), For N = 1, 2, 3, 7
+- card_scale_dup_N=100∙(Number of trans in the past N days on this card with same amount)/(Number of transactions in the past N days on this card), For N = 1, 2, 3, 7
+- card_scale_dup_N=100∙(Number of trans in the past N days from merch with same amount)/(Number of transactions in the past N days from merchant), For N = 1, 2, 3, 7
+- card_scale_State_N=100∙(Number of trans in the past 1 day on this card with same state)/(Number of transactions in the past 1 day on this card), For N = 1
+
+### Model Algorithm
+
+- Model choosing
+
+After creating the 25 variables as mentioned above, we ran 2 sets of models to see which performs better: Logistic regression, LDA, QDA – Linear and simpler models. They should give us a baseline that all the nonlinear methods should improve over. Random forest, SVM, neural network, CART, boosted tree, KNN – More sophisticated non-linear model. We expected these models to perform slightly better than logistic regression.
+
+- Data standardization
+
+Experience as shown that neural network training is usually more efficient when numeric independent variables are scaled, or normalized, so that their magnitudes are relatively similar. Normalization also help SVM performs better in that all features have roughly the same magnitude (since we don’t assume that some features are much more important than others). For this reason, we scaled the data we fed into the models. Noticed that we didn’t apply data normalization to data to other models such as random forest because random forest is invariant to monotonic transformations of individual features so translations or per feature scaling will not change anything to the performance.
+
+- How to calculate FDA @3%
+
+We calculate fraud detective rate for each model in order to know which one performs better. After we ran each model, we got a probability, which we used as a score, for each record. We sorted the records by probability from high to low and chose top 3%.
+
+FDR@3%=(label=1 @3%)/(label=1 in Training/Testing/OOD)
+We applied the same method to all the models and came up with the table below: 
+  d1 ~ d10: down sample the goods from 1/1 goods-to-bads to 10/1 goods-to-bads.
+	Base: original training dataset, without down sample the goods, 25 independent variables
+	v2: dataset from project 2, 16 independent variables
