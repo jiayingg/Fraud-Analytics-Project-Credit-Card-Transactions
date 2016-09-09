@@ -31,3 +31,62 @@ The data contains credit card transaction records, along with the card number, m
 |                                   | TRANSTYPE        | 100% |
 |                                   | MERCHZIP         | 95%  |
 |                                   | DATE             | 100% |
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-baqh">Field Name</th>
+    <th class="tg-baqh">% Populated</th>
+    <th class="tg-baqh"></th>
+  </tr>
+  <tr>
+    <td class="tg-baqh">Dependent variable</td>
+    <td class="tg-baqh">Fraud label</td>
+    <td class="tg-baqh">100%</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh"></td>
+    <td class="tg-baqh"></td>
+    <td class="tg-baqh"></td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">Numerical Independent variables</td>
+    <td class="tg-baqh">AMOUNT</td>
+    <td class="tg-baqh">100%</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh" rowspan="7">Categorical Independent variables</td>
+    <td class="tg-baqh">CARDNUM</td>
+    <td class="tg-baqh">100%</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">MERCHNUM</td>
+    <td class="tg-baqh">96%</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">MERCHDESCRIPTION</td>
+    <td class="tg-baqh">100%</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">MERCHSTATE</td>
+    <td class="tg-baqh">99%</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">TRANSTYPE</td>
+    <td class="tg-baqh">100%</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">MERCHZIP</td>
+    <td class="tg-baqh">95%</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">DATE</td>
+    <td class="tg-baqh">100%</td>
+  </tr>
+</table>
