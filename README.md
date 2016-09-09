@@ -20,9 +20,9 @@ The data contains credit card transaction records, along with the card number, m
 
 <table>
   <tr>
+    <th></th>
     <th>Field Name</th>
     <th>% Populated</th>
-    <th></th>
   </tr>
   <tr>
     <td>Dependent variable</td>
