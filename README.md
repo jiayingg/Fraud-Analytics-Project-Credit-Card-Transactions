@@ -69,3 +69,27 @@ From our basic exploration of the data, a few findings may help guide further an
 - The number of transactions associated with each card number varies greatly, with largest number over 1,000. The number of transactions for each merchant also varies greatly, with largest number over 9,000. It might be interesting to explore the high values within these two entities.
 - The zip code with each merchant has the highest number of missing values. The zip codes listed also have different length and formats. Due to the unexplainable irregularity in this field, we might not choose it as an entity for our analysis.
 - This is the largest amount of payment in the dataset, and has a significantly higher value than other records. There are many missing information in this row and the information of Merchant description which is “INTERMEXICO” is very suspicious associated with this payment amount. The existence of this record might have an influence on our scoring of other records.
+<table>
+  <tr>
+    <th>Record #</th>
+    <th>CARDNUM</th>
+    <th>DATE</th>
+    <th>MERCHNUM</th>
+    <th>MERCHDESCRIPTION</th>
+    <th>MERCHSTATE</th>
+    <th>MERCHZIP</th>
+    <th>TRANSTYPE</th>
+    <th>AMOUNT</th>
+  </tr>
+  <tr>
+    <td>52293</td>
+    <td>5142189135</td>
+    <td>7/13/2010</td>
+    <td></td>
+    <td>INTERMEXICO</td>
+    <td></td>
+    <td></td>
+    <td>P</td>
+    <td>$3,102,045.53</td>
+  </tr>
+</table>
