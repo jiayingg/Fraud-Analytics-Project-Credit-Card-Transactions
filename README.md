@@ -154,502 +154,506 @@ We applied the same method to all the models and compared our models based on th
 
 We compared them separately because our linear models have relatively low rates on training and testing, but scored very high in validation, but our non-linear models followed the expected pattern, with training and testing roughly the same and validation slightly lower. Due to time limits, we haven’t resolved the issue with our unexpectedly well-performed linear models, and we decided to go with our best performing non-linear model. Based on the comparison we made, KNN won the game.
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg .tg-yw4l{vertical-align:top}
-</style>
-<table class="tg">
+<table>
   <tr>
-    <th class="tg-yw4l">Logistics</th>
-    <th class="tg-yw4l">Base</th>
-    <th class="tg-yw4l">v2</th>
-    <th class="tg-yw4l">d1</th>
-    <th class="tg-yw4l">d3</th>
-    <th class="tg-yw4l">d5</th>
-    <th class="tg-yw4l">d7</th>
-    <th class="tg-yw4l">d10</th>
+    <th>Model 1</th>
+    <th>Model 2</th>
+    <th>Model 3</th>
+    <th>Model 4</th>
+    <th>Model 5</th>
+    <th>Model 6</th>
+    <th>Model 7</th>
+    <th></th>
   </tr>
   <tr>
-    <td class="tg-yw4l">Train</td>
-    <td class="tg-yw4l">16.58%</td>
-    <td class="tg-yw4l">16.94%</td>
-    <td class="tg-yw4l">4.00%</td>
-    <td class="tg-yw4l">6.16%</td>
-    <td class="tg-yw4l">7.75%</td>
-    <td class="tg-yw4l">9.34%</td>
-    <td class="tg-yw4l">11.09%</td>
+    <td>Logistics</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Test</td>
-    <td class="tg-yw4l">17.45%</td>
-    <td class="tg-yw4l">19.15%</td>
-    <td class="tg-yw4l">13.40%</td>
-    <td class="tg-yw4l">14.68%</td>
-    <td class="tg-yw4l">15.11%</td>
-    <td class="tg-yw4l">14.68%</td>
-    <td class="tg-yw4l">14.89%</td>
+    <td>Train</td>
+    <td>16.58%</td>
+    <td>16.94%</td>
+    <td>4.00%</td>
+    <td>6.16%</td>
+    <td>7.75%</td>
+    <td>9.34%</td>
+    <td>11.09%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Validate</td>
-    <td class="tg-yw4l">28.63%</td>
-    <td class="tg-yw4l">30.21%</td>
-    <td class="tg-yw4l">29.71%</td>
-    <td class="tg-yw4l">29.27%</td>
-    <td class="tg-yw4l">29.58%</td>
-    <td class="tg-yw4l">29.01%</td>
-    <td class="tg-yw4l">29.20%</td>
+    <td>Test</td>
+    <td>17.45%</td>
+    <td>19.15%</td>
+    <td>13.40%</td>
+    <td>14.68%</td>
+    <td>15.11%</td>
+    <td>14.68%</td>
+    <td>14.89%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
+    <td>Validate</td>
+    <td>28.63%</td>
+    <td>30.21%</td>
+    <td>29.71%</td>
+    <td>29.27%</td>
+    <td>29.58%</td>
+    <td>29.01%</td>
+    <td>29.20%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">LDA</td>
-    <td class="tg-yw4l">Base</td>
-    <td class="tg-yw4l">v2</td>
-    <td class="tg-yw4l">d1</td>
-    <td class="tg-yw4l">d3</td>
-    <td class="tg-yw4l">d5</td>
-    <td class="tg-yw4l">d7</td>
-    <td class="tg-yw4l">d10</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Train</td>
-    <td class="tg-yw4l">7.85%</td>
-    <td class="tg-yw4l">7.91%</td>
-    <td class="tg-yw4l">3.90%</td>
-    <td class="tg-yw4l">3.90%</td>
-    <td class="tg-yw4l">7.49%</td>
-    <td class="tg-yw4l">8.47%</td>
-    <td class="tg-yw4l">9.24%</td>
+    <td>LDA</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Test</td>
-    <td class="tg-yw4l">8.09%</td>
-    <td class="tg-yw4l">8.51%</td>
-    <td class="tg-yw4l">12.98%</td>
-    <td class="tg-yw4l">12.98%</td>
-    <td class="tg-yw4l">12.13%</td>
-    <td class="tg-yw4l">12.13%</td>
-    <td class="tg-yw4l">11.49%</td>
+    <td>Train</td>
+    <td>7.85%</td>
+    <td>7.91%</td>
+    <td>3.90%</td>
+    <td>3.90%</td>
+    <td>7.49%</td>
+    <td>8.47%</td>
+    <td>9.24%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Validate</td>
-    <td class="tg-yw4l">14.29%</td>
-    <td class="tg-yw4l">15.87%</td>
-    <td class="tg-yw4l">29.58%</td>
-    <td class="tg-yw4l">29.58%</td>
-    <td class="tg-yw4l">31.73%</td>
-    <td class="tg-yw4l">31.86%</td>
-    <td class="tg-yw4l">31.92%</td>
+    <td>Test</td>
+    <td>8.09%</td>
+    <td>8.51%</td>
+    <td>12.98%</td>
+    <td>12.98%</td>
+    <td>12.13%</td>
+    <td>12.13%</td>
+    <td>11.49%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
+    <td>Validate</td>
+    <td>14.29%</td>
+    <td>15.87%</td>
+    <td>29.58%</td>
+    <td>29.58%</td>
+    <td>31.73%</td>
+    <td>31.86%</td>
+    <td>31.92%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">QDA</td>
-    <td class="tg-yw4l">Base</td>
-    <td class="tg-yw4l">v2</td>
-    <td class="tg-yw4l">d1</td>
-    <td class="tg-yw4l">d3</td>
-    <td class="tg-yw4l">d5</td>
-    <td class="tg-yw4l">d7</td>
-    <td class="tg-yw4l">d10</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Train</td>
-    <td class="tg-yw4l">23.20%</td>
-    <td class="tg-yw4l">22.54%</td>
-    <td class="tg-yw4l">5.70%</td>
-    <td class="tg-yw4l">10.06%</td>
-    <td class="tg-yw4l">13.45%</td>
-    <td class="tg-yw4l">15.81%</td>
-    <td class="tg-yw4l">17.61%</td>
+    <td>QDA</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Test</td>
-    <td class="tg-yw4l">24.04%</td>
-    <td class="tg-yw4l">23.40%</td>
-    <td class="tg-yw4l">24.89%</td>
-    <td class="tg-yw4l">25.11%</td>
-    <td class="tg-yw4l">24.68%</td>
-    <td class="tg-yw4l">24.68%</td>
-    <td class="tg-yw4l">24.47%</td>
+    <td>Train</td>
+    <td>23.20%</td>
+    <td>22.54%</td>
+    <td>5.70%</td>
+    <td>10.06%</td>
+    <td>13.45%</td>
+    <td>15.81%</td>
+    <td>17.61%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Validate</td>
-    <td class="tg-yw4l">30.09%</td>
-    <td class="tg-yw4l">30.78%</td>
-    <td class="tg-yw4l">29.46%</td>
-    <td class="tg-yw4l">29.39%</td>
-    <td class="tg-yw4l">30.28%</td>
-    <td class="tg-yw4l">30.21%</td>
-    <td class="tg-yw4l">30.03%</td>
+    <td>Test</td>
+    <td>24.04%</td>
+    <td>23.40%</td>
+    <td>24.89%</td>
+    <td>25.11%</td>
+    <td>24.68%</td>
+    <td>24.68%</td>
+    <td>24.47%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
+    <td>Validate</td>
+    <td>30.09%</td>
+    <td>30.78%</td>
+    <td>29.46%</td>
+    <td>29.39%</td>
+    <td>30.28%</td>
+    <td>30.21%</td>
+    <td>30.03%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Random Forest</td>
-    <td class="tg-yw4l">Base</td>
-    <td class="tg-yw4l">v2</td>
-    <td class="tg-yw4l">d1</td>
-    <td class="tg-yw4l">d3</td>
-    <td class="tg-yw4l">d5</td>
-    <td class="tg-yw4l">d7</td>
-    <td class="tg-yw4l">d10</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Train</td>
-    <td class="tg-yw4l">59.67%</td>
-    <td class="tg-yw4l">57.43%</td>
-    <td class="tg-yw4l">41.02%</td>
-    <td class="tg-yw4l">54.36%</td>
-    <td class="tg-yw4l">61.50%</td>
-    <td class="tg-yw4l">65.09%</td>
-    <td class="tg-yw4l">72.59%</td>
+    <td>Random Forest</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Test</td>
-    <td class="tg-yw4l">34.26%</td>
-    <td class="tg-yw4l">34.26%</td>
-    <td class="tg-yw4l">29.36%</td>
-    <td class="tg-yw4l">34.04%</td>
-    <td class="tg-yw4l">35.53%</td>
-    <td class="tg-yw4l">34.26%</td>
-    <td class="tg-yw4l">37.02%</td>
+    <td>Train</td>
+    <td>59.67%</td>
+    <td>57.43%</td>
+    <td>41.02%</td>
+    <td>54.36%</td>
+    <td>61.50%</td>
+    <td>65.09%</td>
+    <td>72.59%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Validate</td>
-    <td class="tg-yw4l">25.03%</td>
-    <td class="tg-yw4l">25.03%</td>
-    <td class="tg-yw4l">20.99%</td>
-    <td class="tg-yw4l">22.19%</td>
-    <td class="tg-yw4l">24.40%</td>
-    <td class="tg-yw4l">26.36%</td>
-    <td class="tg-yw4l">25.66%</td>
+    <td>Test</td>
+    <td>34.26%</td>
+    <td>34.26%</td>
+    <td>29.36%</td>
+    <td>34.04%</td>
+    <td>35.53%</td>
+    <td>34.26%</td>
+    <td>37.02%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
+    <td>Validate</td>
+    <td>25.03%</td>
+    <td>25.03%</td>
+    <td>20.99%</td>
+    <td>22.19%</td>
+    <td>24.40%</td>
+    <td>26.36%</td>
+    <td>25.66%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">SVM</td>
-    <td class="tg-yw4l">Base</td>
-    <td class="tg-yw4l">v2</td>
-    <td class="tg-yw4l">d1</td>
-    <td class="tg-yw4l">d3</td>
-    <td class="tg-yw4l">d5</td>
-    <td class="tg-yw4l">d7</td>
-    <td class="tg-yw4l">d10</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Train</td>
-    <td class="tg-yw4l">38.24%</td>
-    <td class="tg-yw4l">31.57%</td>
-    <td class="tg-yw4l">27.62%</td>
-    <td class="tg-yw4l">10.88%</td>
-    <td class="tg-yw4l">15.86%</td>
-    <td class="tg-yw4l">19.97%</td>
-    <td class="tg-yw4l">23.56%</td>
+    <td>SVM</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Test</td>
-    <td class="tg-yw4l">26.17%</td>
-    <td class="tg-yw4l">27.66%</td>
-    <td class="tg-yw4l">9.57%</td>
-    <td class="tg-yw4l">28.30%</td>
-    <td class="tg-yw4l">32.98%</td>
-    <td class="tg-yw4l">31.91%</td>
-    <td class="tg-yw4l">31.70%</td>
+    <td>Train</td>
+    <td>38.24%</td>
+    <td>31.57%</td>
+    <td>27.62%</td>
+    <td>10.88%</td>
+    <td>15.86%</td>
+    <td>19.97%</td>
+    <td>23.56%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Validate</td>
-    <td class="tg-yw4l">21.49%</td>
-    <td class="tg-yw4l">23.51%</td>
-    <td class="tg-yw4l">6.01%</td>
-    <td class="tg-yw4l">11.44%</td>
-    <td class="tg-yw4l">19.09%</td>
-    <td class="tg-yw4l">19.53%</td>
-    <td class="tg-yw4l">20.61%</td>
+    <td>Test</td>
+    <td>26.17%</td>
+    <td>27.66%</td>
+    <td>9.57%</td>
+    <td>28.30%</td>
+    <td>32.98%</td>
+    <td>31.91%</td>
+    <td>31.70%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
+    <td>Validate</td>
+    <td>21.49%</td>
+    <td>23.51%</td>
+    <td>6.01%</td>
+    <td>11.44%</td>
+    <td>19.09%</td>
+    <td>19.53%</td>
+    <td>20.61%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Neural Net</td>
-    <td class="tg-yw4l">Base</td>
-    <td class="tg-yw4l">v2</td>
-    <td class="tg-yw4l">d1</td>
-    <td class="tg-yw4l">d3</td>
-    <td class="tg-yw4l">d5</td>
-    <td class="tg-yw4l">d7</td>
-    <td class="tg-yw4l">d10</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Train</td>
-    <td class="tg-yw4l">37.18%</td>
-    <td class="tg-yw4l">34.24%</td>
-    <td class="tg-yw4l">31.43%</td>
-    <td class="tg-yw4l">23.21%</td>
-    <td class="tg-yw4l">29.12%</td>
-    <td class="tg-yw4l">24.12%</td>
-    <td class="tg-yw4l">25.13%</td>
+    <td>Neural Net</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Test</td>
-    <td class="tg-yw4l">36.81%</td>
-    <td class="tg-yw4l">31.02%</td>
-    <td class="tg-yw4l">26.35%</td>
-    <td class="tg-yw4l">20.14%</td>
-    <td class="tg-yw4l">21.12%</td>
-    <td class="tg-yw4l">22.14%</td>
-    <td class="tg-yw4l">23.14%</td>
+    <td>Train</td>
+    <td>37.18%</td>
+    <td>34.24%</td>
+    <td>31.43%</td>
+    <td>23.21%</td>
+    <td>29.12%</td>
+    <td>24.12%</td>
+    <td>25.13%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Validate</td>
-    <td class="tg-yw4l">27.11%</td>
-    <td class="tg-yw4l">13.12%</td>
-    <td class="tg-yw4l">15.46%</td>
-    <td class="tg-yw4l">12.14%</td>
-    <td class="tg-yw4l">16.12%</td>
-    <td class="tg-yw4l">13.12%</td>
-    <td class="tg-yw4l">14.12%</td>
+    <td>Test</td>
+    <td>36.81%</td>
+    <td>31.02%</td>
+    <td>26.35%</td>
+    <td>20.14%</td>
+    <td>21.12%</td>
+    <td>22.14%</td>
+    <td>23.14%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
+    <td>Validate</td>
+    <td>27.11%</td>
+    <td>13.12%</td>
+    <td>15.46%</td>
+    <td>12.14%</td>
+    <td>16.12%</td>
+    <td>13.12%</td>
+    <td>14.12%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">CART - rpart</td>
-    <td class="tg-yw4l">Base</td>
-    <td class="tg-yw4l">v2</td>
-    <td class="tg-yw4l">d1</td>
-    <td class="tg-yw4l">d3</td>
-    <td class="tg-yw4l">d5</td>
-    <td class="tg-yw4l">d7</td>
-    <td class="tg-yw4l">d10</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Train</td>
-    <td class="tg-yw4l">0.20%</td>
-    <td class="tg-yw4l">19.40%</td>
-    <td class="tg-yw4l">5.10%</td>
-    <td class="tg-yw4l">10.50%</td>
-    <td class="tg-yw4l">14.90%</td>
-    <td class="tg-yw4l">17.50%</td>
-    <td class="tg-yw4l">19.10%</td>
+    <td>CART - rpart</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Test</td>
-    <td class="tg-yw4l">12.30%</td>
-    <td class="tg-yw4l">22.10%</td>
-    <td class="tg-yw4l">0.90%</td>
-    <td class="tg-yw4l">24.70%</td>
-    <td class="tg-yw4l">26.00%</td>
-    <td class="tg-yw4l">25.30%</td>
-    <td class="tg-yw4l">21.50%</td>
+    <td>Train</td>
+    <td>0.20%</td>
+    <td>19.40%</td>
+    <td>5.10%</td>
+    <td>10.50%</td>
+    <td>14.90%</td>
+    <td>17.50%</td>
+    <td>19.10%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Validate</td>
-    <td class="tg-yw4l">2.60%</td>
-    <td class="tg-yw4l">19.70%</td>
-    <td class="tg-yw4l">16.80%</td>
-    <td class="tg-yw4l">20.40%</td>
-    <td class="tg-yw4l">21.90%</td>
-    <td class="tg-yw4l">24.60%</td>
-    <td class="tg-yw4l">23.60%</td>
+    <td>Test</td>
+    <td>12.30%</td>
+    <td>22.10%</td>
+    <td>0.90%</td>
+    <td>24.70%</td>
+    <td>26.00%</td>
+    <td>25.30%</td>
+    <td>21.50%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
+    <td>Validate</td>
+    <td>2.60%</td>
+    <td>19.70%</td>
+    <td>16.80%</td>
+    <td>20.40%</td>
+    <td>21.90%</td>
+    <td>24.60%</td>
+    <td>23.60%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">CART - tree</td>
-    <td class="tg-yw4l">Base</td>
-    <td class="tg-yw4l">v2</td>
-    <td class="tg-yw4l">d1</td>
-    <td class="tg-yw4l">d3</td>
-    <td class="tg-yw4l">d5</td>
-    <td class="tg-yw4l">d7</td>
-    <td class="tg-yw4l">d10</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Train</td>
-    <td class="tg-yw4l">19.40%</td>
-    <td class="tg-yw4l">19.40%</td>
-    <td class="tg-yw4l">5.80%</td>
-    <td class="tg-yw4l">10.50%</td>
-    <td class="tg-yw4l">14.90%</td>
-    <td class="tg-yw4l">17.60%</td>
-    <td class="tg-yw4l">19.10%</td>
+    <td>CART - tree</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Test</td>
-    <td class="tg-yw4l">21.60%</td>
-    <td class="tg-yw4l">22.10%</td>
-    <td class="tg-yw4l">14.00%</td>
-    <td class="tg-yw4l">21.70%</td>
-    <td class="tg-yw4l">24.90%</td>
-    <td class="tg-yw4l">24.00%</td>
-    <td class="tg-yw4l">21.50%</td>
+    <td>Train</td>
+    <td>19.40%</td>
+    <td>19.40%</td>
+    <td>5.80%</td>
+    <td>10.50%</td>
+    <td>14.90%</td>
+    <td>17.60%</td>
+    <td>19.10%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Validate</td>
-    <td class="tg-yw4l">19.70%</td>
-    <td class="tg-yw4l">19.70%</td>
-    <td class="tg-yw4l">15.00%</td>
-    <td class="tg-yw4l">26.20%</td>
-    <td class="tg-yw4l">24.70%</td>
-    <td class="tg-yw4l">26.40%</td>
-    <td class="tg-yw4l">23.60%</td>
+    <td>Test</td>
+    <td>21.60%</td>
+    <td>22.10%</td>
+    <td>14.00%</td>
+    <td>21.70%</td>
+    <td>24.90%</td>
+    <td>24.00%</td>
+    <td>21.50%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
+    <td>Validate</td>
+    <td>19.70%</td>
+    <td>19.70%</td>
+    <td>15.00%</td>
+    <td>26.20%</td>
+    <td>24.70%</td>
+    <td>26.40%</td>
+    <td>23.60%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Boosted Tree</td>
-    <td class="tg-yw4l">Base</td>
-    <td class="tg-yw4l">v2</td>
-    <td class="tg-yw4l">d1</td>
-    <td class="tg-yw4l">d3</td>
-    <td class="tg-yw4l">d5</td>
-    <td class="tg-yw4l">d7</td>
-    <td class="tg-yw4l">d10</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Train</td>
-    <td class="tg-yw4l">43.43%</td>
-    <td class="tg-yw4l">45.33%</td>
-    <td class="tg-yw4l">6.06%</td>
-    <td class="tg-yw4l">11.91%</td>
-    <td class="tg-yw4l">17.56%</td>
-    <td class="tg-yw4l">22.95%</td>
-    <td class="tg-yw4l">29.26%</td>
+    <td>Boosted Tree</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Test</td>
-    <td class="tg-yw4l">37.87%</td>
-    <td class="tg-yw4l">36.60%</td>
-    <td class="tg-yw4l">31.70%</td>
-    <td class="tg-yw4l">33.83%</td>
-    <td class="tg-yw4l">34.89%</td>
-    <td class="tg-yw4l">36.60%</td>
-    <td class="tg-yw4l">36.81%</td>
+    <td>Train</td>
+    <td>43.43%</td>
+    <td>45.33%</td>
+    <td>6.06%</td>
+    <td>11.91%</td>
+    <td>17.56%</td>
+    <td>22.95%</td>
+    <td>29.26%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Validate</td>
-    <td class="tg-yw4l">24.78%</td>
-    <td class="tg-yw4l">26.74%</td>
-    <td class="tg-yw4l">26.36%</td>
-    <td class="tg-yw4l">26.30%</td>
-    <td class="tg-yw4l">25.28%</td>
-    <td class="tg-yw4l">26.17%</td>
-    <td class="tg-yw4l">24.65%</td>
+    <td>Test</td>
+    <td>37.87%</td>
+    <td>36.60%</td>
+    <td>31.70%</td>
+    <td>33.83%</td>
+    <td>34.89%</td>
+    <td>36.60%</td>
+    <td>36.81%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
+    <td>Validate</td>
+    <td>24.78%</td>
+    <td>26.74%</td>
+    <td>26.36%</td>
+    <td>26.30%</td>
+    <td>25.28%</td>
+    <td>26.17%</td>
+    <td>24.65%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">KNN</td>
-    <td class="tg-yw4l">Base</td>
-    <td class="tg-yw4l">v2</td>
-    <td class="tg-yw4l">d1</td>
-    <td class="tg-yw4l">d3</td>
-    <td class="tg-yw4l">d5</td>
-    <td class="tg-yw4l">d7</td>
-    <td class="tg-yw4l">d10</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Train</td>
-    <td class="tg-yw4l">29.40%</td>
-    <td class="tg-yw4l">29.41%</td>
-    <td class="tg-yw4l">2.10%</td>
-    <td class="tg-yw4l">6.10%</td>
-    <td class="tg-yw4l">9.80%</td>
-    <td class="tg-yw4l">12.70%</td>
-    <td class="tg-yw4l">17.80%</td>
+    <td>KNN</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Test</td>
-    <td class="tg-yw4l">29.80%</td>
-    <td class="tg-yw4l">29.79%</td>
-    <td class="tg-yw4l">3.20%</td>
-    <td class="tg-yw4l">12.30%</td>
-    <td class="tg-yw4l">12.80%</td>
-    <td class="tg-yw4l">20.20%</td>
-    <td class="tg-yw4l">28.90%</td>
+    <td>Train</td>
+    <td>29.40%</td>
+    <td>29.41%</td>
+    <td>2.10%</td>
+    <td>6.10%</td>
+    <td>9.80%</td>
+    <td>12.70%</td>
+    <td>17.80%</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Validate</td>
-    <td class="tg-yw4l">27.70%</td>
-    <td class="tg-yw4l">29.01%</td>
-    <td class="tg-yw4l">1.50%</td>
-    <td class="tg-yw4l">9.80%</td>
-    <td class="tg-yw4l">17.10%</td>
-    <td class="tg-yw4l">24.80%</td>
-    <td class="tg-yw4l">28.40%</td>
+    <td>Test</td>
+    <td>29.80%</td>
+    <td>29.79%</td>
+    <td>3.20%</td>
+    <td>12.30%</td>
+    <td>12.80%</td>
+    <td>20.20%</td>
+    <td>28.90%</td>
+  </tr>
+  <tr>
+    <td>Validate</td>
+    <td>27.70%</td>
+    <td>29.01%</td>
+    <td>1.50%</td>
+    <td>9.80%</td>
+    <td>17.10%</td>
+    <td>24.80%</td>
+    <td>28.40%</td>
   </tr>
 </table>
 
