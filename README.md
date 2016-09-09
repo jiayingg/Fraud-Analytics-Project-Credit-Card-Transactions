@@ -115,13 +115,7 @@ For the entity STATE, we calculated the percentage of transactions on a certain 
 
 Below are our variables:
 
-	card_scale_trans_N=(90/N)∙(Number of transactions in the past N days on this card)/(Number of transactions in the past 90 days on this card),For N = 1, 2, 3, 7
-	card_scale_amount_N=(90/N)∙( Total transaction amount in the past N days on this card)/( Total transaction amount in the past 90 days on this card), For N = 1, 2, 3, 7
-	merch_scale_trans_N=(90/N)∙(Number of transactions in the past N days from merchant)/(Number of transactions in the past 90 days from merchant), For N = 1, 2, 3, 7
-	merch_scale_amount_N=(90/N)∙( Total trans amount in the past N days from merchant)/( Total trans amount in the past 90 days from merchant), For N = 1, 2, 3, 7
-	card_scale_dup_N=100∙(Number of trans in the past N days on this card with same amount)/(Number of transactions in the past N days on this card), For N = 1, 2, 3, 7
-	card_scale_dup_N=100∙(Number of trans in the past N days from merch with same amount)/(Number of transactions in the past N days from merchant), For N = 1, 2, 3, 7
-	card_scale_State_N=100∙(Number of trans in the past 1 day on this card with same state)/(Number of transactions in the past 1 day on this card), For N = 1
+![Image of new variables](http://i65.tinypic.com/vpi0ba.png)
 
 ### Model Algorithm
 
@@ -135,7 +129,11 @@ Experience as shown that neural network training is usually more efficient when 
 
 - How to calculate FDA @3%
 
-We calculate fraud detective rate for each model in order to know which one performs better. After we ran each model, we got a probability, which we used as a score, for each record. We sorted the records by probability from high to low and chose top 3%.
+We calculate fraud detective rate for each model in order to know which one performs better. After we ran each model, we got a probability, which we used as a score, for each record. 
+
+![](http://i64.tinypic.com/2dvlsbd.png)
+
+We sorted the records by probability from high to low and chose top 3%.
 
 **FDR@3%=(label=1 @3%)/(label=1 in Training/Testing/OOD)**
 
