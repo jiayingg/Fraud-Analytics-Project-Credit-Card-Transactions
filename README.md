@@ -117,4 +117,4 @@ For the entity STATE, we calculated the percentage of transactions on a certain 
 
 Below are our variables:
 
-\frac{90}{N}
+\\frac{90}{N}
