@@ -117,4 +117,4 @@ For the entity STATE, we calculated the percentage of transactions on a certain 
 
 Below are our variables:
 
-- \frac{90}{N}\cdot \frac{Number of transactions in the past N days on this card}{Number of transactions in the past 90 days on this card}, For N = 1, 2, 3, 7
+\frac{90}{N}\cdot \frac{Number of transactions in the past N days on this card}{Number of transactions in the past 90 days on this card}, For N = 1, 2, 3, 7
