@@ -29,8 +29,6 @@ The data contains credit card transaction records, along with the card number, m
     <td>Fraud label</td>
     <td>100%</td>
   </tr>
-</table>
-<table>
   <tr>
     <td>Numerical Independent variables</td>
     <td>AMOUNT</td>
