@@ -156,6 +156,7 @@ We compared them separately because our linear models have relatively low rates 
 
 <table>
   <tr>
+    <th>Algorithm</th>
     <th>Model 1</th>
     <th>Model 2</th>
     <th>Model 3</th>
@@ -163,7 +164,6 @@ We compared them separately because our linear models have relatively low rates 
     <th>Model 5</th>
     <th>Model 6</th>
     <th>Model 7</th>
-    <th></th>
   </tr>
   <tr>
     <td>Logistics</td>
