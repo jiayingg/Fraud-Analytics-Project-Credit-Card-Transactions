@@ -115,13 +115,7 @@ For the entity STATE, we calculated the percentage of transactions on a certain 
 
 Below are our variables:
 
-	card_scale_trans_N=(90/N)∙(Number of transactions in the past N days on this card)/(Number of transactions in the past 90 days on this card),For N = 1, 2, 3, 7
-	card_scale_amount_N=(90/N)∙( Total transaction amount in the past N days on this card)/( Total transaction amount in the past 90 days on this card), For N = 1, 2, 3, 7
-	merch_scale_trans_N=(90/N)∙(Number of transactions in the past N days from merchant)/(Number of transactions in the past 90 days from merchant), For N = 1, 2, 3, 7
-	merch_scale_amount_N=(90/N)∙( Total trans amount in the past N days from merchant)/( Total trans amount in the past 90 days from merchant), For N = 1, 2, 3, 7
-	card_scale_dup_N=100∙(Number of trans in the past N days on this card with same amount)/(Number of transactions in the past N days on this card), For N = 1, 2, 3, 7
-	card_scale_dup_N=100∙(Number of trans in the past N days from merch with same amount)/(Number of transactions in the past N days from merchant), For N = 1, 2, 3, 7
-	card_scale_State_N=100∙(Number of trans in the past 1 day on this card with same state)/(Number of transactions in the past 1 day on this card), For N = 1
+![Image of new variables](http://i65.tinypic.com/vpi0ba.png)
 
 ### Model Algorithm
 
@@ -135,11 +129,533 @@ Experience as shown that neural network training is usually more efficient when 
 
 - How to calculate FDA @3%
 
-We calculate fraud detective rate for each model in order to know which one performs better. After we ran each model, we got a probability, which we used as a score, for each record. We sorted the records by probability from high to low and chose top 3%.
+We calculate fraud detective rate for each model in order to know which one performs better. After we ran each model, we got a probability, which we used as a score, for each record. 
 
-**FDR@3%=(label=1 @3%)/(label=1 in Training/Testing/OOD)**
+![](http://i64.tinypic.com/2dvlsbd.png)
 
-We applied the same method to all the models and compared our models based on their FDR@3%, and did separate comparisons for our linear models and non-linear models. We compared them separately because our linear models have relatively low rates on training and testing, but scored very high in validation, but our non-linear models followed the expected pattern, with training and testing roughly the same and validation slightly lower. Due to time limits, we haven’t resolved the issue with our unexpectedly well-performed linear models, and we decided to go with our best performing non-linear model. Based on the comparison we made, KNN won the game.
+We sorted the records by probability from high to low and chose top 3%.
+
+![](http://i64.tinypic.com/dhan8y.png)
+
+We applied the same method to all the models and compared our models based on their FDR@3%, and did separate comparisons for our linear models and non-linear models. 
+
+<table>
+  <tr>
+    <th>d1 ~ d10</th>
+    <th>Base</th>
+    <th>v2</th>
+  </tr>
+  <tr>
+    <td>down sample the goods from 1/1 goods-to-bads to 10/1 goods-to-bads.</td>
+    <td>original training dataset, without down sample the goods, 25 independent variables</td>
+    <td>dataset from project 2, 16 independent variables</td>
+  </tr>
+</table>
+
+We compared them separately because our linear models have relatively low rates on training and testing, but scored very high in validation, but our non-linear models followed the expected pattern, with training and testing roughly the same and validation slightly lower. Due to time limits, we haven’t resolved the issue with our unexpectedly well-performed linear models, and we decided to go with our best performing non-linear model. Based on the comparison we made, KNN won the game.
+
+<table>
+  <tr>
+    <th>Algorithm</th>
+    <th>Model 1</th>
+    <th>Model 2</th>
+    <th>Model 3</th>
+    <th>Model 4</th>
+    <th>Model 5</th>
+    <th>Model 6</th>
+    <th>Model 7</th>
+  </tr>
+  <tr>
+    <td>Logistics</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
+  </tr>
+  <tr>
+    <td>Train</td>
+    <td>16.58%</td>
+    <td>16.94%</td>
+    <td>4.00%</td>
+    <td>6.16%</td>
+    <td>7.75%</td>
+    <td>9.34%</td>
+    <td>11.09%</td>
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>17.45%</td>
+    <td>19.15%</td>
+    <td>13.40%</td>
+    <td>14.68%</td>
+    <td>15.11%</td>
+    <td>14.68%</td>
+    <td>14.89%</td>
+  </tr>
+  <tr>
+    <td>Validate</td>
+    <td>28.63%</td>
+    <td>30.21%</td>
+    <td>29.71%</td>
+    <td>29.27%</td>
+    <td>29.58%</td>
+    <td>29.01%</td>
+    <td>29.20%</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>LDA</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
+  </tr>
+  <tr>
+    <td>Train</td>
+    <td>7.85%</td>
+    <td>7.91%</td>
+    <td>3.90%</td>
+    <td>3.90%</td>
+    <td>7.49%</td>
+    <td>8.47%</td>
+    <td>9.24%</td>
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>8.09%</td>
+    <td>8.51%</td>
+    <td>12.98%</td>
+    <td>12.98%</td>
+    <td>12.13%</td>
+    <td>12.13%</td>
+    <td>11.49%</td>
+  </tr>
+  <tr>
+    <td>Validate</td>
+    <td>14.29%</td>
+    <td>15.87%</td>
+    <td>29.58%</td>
+    <td>29.58%</td>
+    <td>31.73%</td>
+    <td>31.86%</td>
+    <td>31.92%</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>QDA</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
+  </tr>
+  <tr>
+    <td>Train</td>
+    <td>23.20%</td>
+    <td>22.54%</td>
+    <td>5.70%</td>
+    <td>10.06%</td>
+    <td>13.45%</td>
+    <td>15.81%</td>
+    <td>17.61%</td>
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>24.04%</td>
+    <td>23.40%</td>
+    <td>24.89%</td>
+    <td>25.11%</td>
+    <td>24.68%</td>
+    <td>24.68%</td>
+    <td>24.47%</td>
+  </tr>
+  <tr>
+    <td>Validate</td>
+    <td>30.09%</td>
+    <td>30.78%</td>
+    <td>29.46%</td>
+    <td>29.39%</td>
+    <td>30.28%</td>
+    <td>30.21%</td>
+    <td>30.03%</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Random Forest</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
+  </tr>
+  <tr>
+    <td>Train</td>
+    <td>59.67%</td>
+    <td>57.43%</td>
+    <td>41.02%</td>
+    <td>54.36%</td>
+    <td>61.50%</td>
+    <td>65.09%</td>
+    <td>72.59%</td>
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>34.26%</td>
+    <td>34.26%</td>
+    <td>29.36%</td>
+    <td>34.04%</td>
+    <td>35.53%</td>
+    <td>34.26%</td>
+    <td>37.02%</td>
+  </tr>
+  <tr>
+    <td>Validate</td>
+    <td>25.03%</td>
+    <td>25.03%</td>
+    <td>20.99%</td>
+    <td>22.19%</td>
+    <td>24.40%</td>
+    <td>26.36%</td>
+    <td>25.66%</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>SVM</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
+  </tr>
+  <tr>
+    <td>Train</td>
+    <td>38.24%</td>
+    <td>31.57%</td>
+    <td>27.62%</td>
+    <td>10.88%</td>
+    <td>15.86%</td>
+    <td>19.97%</td>
+    <td>23.56%</td>
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>26.17%</td>
+    <td>27.66%</td>
+    <td>9.57%</td>
+    <td>28.30%</td>
+    <td>32.98%</td>
+    <td>31.91%</td>
+    <td>31.70%</td>
+  </tr>
+  <tr>
+    <td>Validate</td>
+    <td>21.49%</td>
+    <td>23.51%</td>
+    <td>6.01%</td>
+    <td>11.44%</td>
+    <td>19.09%</td>
+    <td>19.53%</td>
+    <td>20.61%</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Neural Net</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
+  </tr>
+  <tr>
+    <td>Train</td>
+    <td>37.18%</td>
+    <td>34.24%</td>
+    <td>31.43%</td>
+    <td>23.21%</td>
+    <td>29.12%</td>
+    <td>24.12%</td>
+    <td>25.13%</td>
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>36.81%</td>
+    <td>31.02%</td>
+    <td>26.35%</td>
+    <td>20.14%</td>
+    <td>21.12%</td>
+    <td>22.14%</td>
+    <td>23.14%</td>
+  </tr>
+  <tr>
+    <td>Validate</td>
+    <td>27.11%</td>
+    <td>13.12%</td>
+    <td>15.46%</td>
+    <td>12.14%</td>
+    <td>16.12%</td>
+    <td>13.12%</td>
+    <td>14.12%</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CART - rpart</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
+  </tr>
+  <tr>
+    <td>Train</td>
+    <td>0.20%</td>
+    <td>19.40%</td>
+    <td>5.10%</td>
+    <td>10.50%</td>
+    <td>14.90%</td>
+    <td>17.50%</td>
+    <td>19.10%</td>
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>12.30%</td>
+    <td>22.10%</td>
+    <td>0.90%</td>
+    <td>24.70%</td>
+    <td>26.00%</td>
+    <td>25.30%</td>
+    <td>21.50%</td>
+  </tr>
+  <tr>
+    <td>Validate</td>
+    <td>2.60%</td>
+    <td>19.70%</td>
+    <td>16.80%</td>
+    <td>20.40%</td>
+    <td>21.90%</td>
+    <td>24.60%</td>
+    <td>23.60%</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CART - tree</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
+  </tr>
+  <tr>
+    <td>Train</td>
+    <td>19.40%</td>
+    <td>19.40%</td>
+    <td>5.80%</td>
+    <td>10.50%</td>
+    <td>14.90%</td>
+    <td>17.60%</td>
+    <td>19.10%</td>
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>21.60%</td>
+    <td>22.10%</td>
+    <td>14.00%</td>
+    <td>21.70%</td>
+    <td>24.90%</td>
+    <td>24.00%</td>
+    <td>21.50%</td>
+  </tr>
+  <tr>
+    <td>Validate</td>
+    <td>19.70%</td>
+    <td>19.70%</td>
+    <td>15.00%</td>
+    <td>26.20%</td>
+    <td>24.70%</td>
+    <td>26.40%</td>
+    <td>23.60%</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Boosted Tree</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
+  </tr>
+  <tr>
+    <td>Train</td>
+    <td>43.43%</td>
+    <td>45.33%</td>
+    <td>6.06%</td>
+    <td>11.91%</td>
+    <td>17.56%</td>
+    <td>22.95%</td>
+    <td>29.26%</td>
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>37.87%</td>
+    <td>36.60%</td>
+    <td>31.70%</td>
+    <td>33.83%</td>
+    <td>34.89%</td>
+    <td>36.60%</td>
+    <td>36.81%</td>
+  </tr>
+  <tr>
+    <td>Validate</td>
+    <td>24.78%</td>
+    <td>26.74%</td>
+    <td>26.36%</td>
+    <td>26.30%</td>
+    <td>25.28%</td>
+    <td>26.17%</td>
+    <td>24.65%</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>KNN</td>
+    <td>Base</td>
+    <td>v2</td>
+    <td>d1</td>
+    <td>d3</td>
+    <td>d5</td>
+    <td>d7</td>
+    <td>d10</td>
+  </tr>
+  <tr>
+    <td>Train</td>
+    <td>29.40%</td>
+    <td>29.41%</td>
+    <td>2.10%</td>
+    <td>6.10%</td>
+    <td>9.80%</td>
+    <td>12.70%</td>
+    <td>17.80%</td>
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>29.80%</td>
+    <td>29.79%</td>
+    <td>3.20%</td>
+    <td>12.30%</td>
+    <td>12.80%</td>
+    <td>20.20%</td>
+    <td>28.90%</td>
+  </tr>
+  <tr>
+    <td>Validate</td>
+    <td>27.70%</td>
+    <td>29.01%</td>
+    <td>1.50%</td>
+    <td>9.80%</td>
+    <td>17.10%</td>
+    <td>24.80%</td>
+    <td>28.40%</td>
+  </tr>
+</table>
 
 ### KNN Model Result
 
