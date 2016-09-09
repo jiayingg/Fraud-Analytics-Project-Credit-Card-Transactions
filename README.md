@@ -17,6 +17,8 @@ After building the variables, we first separated the out-of-time data, which con
 
 ### Summary of Data
 The data contains credit card transaction records, along with the card number, merchant information, and transaction date and type. There is a total of 95,271 records (We excluded the one record related to Mexico with a suspiciously high transaction amount, the detail record is listed below) with 10 fields (1 unique identifier, 1 dependent variable, 8 independent variables). For each record, fraud label of “1” means that the record is fraud and “0” means that the record is nonfraud. In the data set, the percentage of records with “Fraud label” =1 approximately equals to 4.2%. The timeframe was from 1/1/2010 to 12/31/2010 and the original format is .csv file. Below is a summary of the field names and the percent populated in each field.
+
+
 | Field Name                        | % Populated      |      |
 |-----------------------------------|------------------|------|
 | Dependent variable                | Fraud label      | 100% |
