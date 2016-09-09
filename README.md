@@ -18,75 +18,54 @@ After building the variables, we first separated the out-of-time data, which con
 ### Summary of Data
 The data contains credit card transaction records, along with the card number, merchant information, and transaction date and type. There is a total of 95,271 records (We excluded the one record related to Mexico with a suspiciously high transaction amount, the detail record is listed below) with 10 fields (1 unique identifier, 1 dependent variable, 8 independent variables). For each record, fraud label of “1” means that the record is fraud and “0” means that the record is nonfraud. In the data set, the percentage of records with “Fraud label” =1 approximately equals to 4.2%. The timeframe was from 1/1/2010 to 12/31/2010 and the original format is .csv file. Below is a summary of the field names and the percent populated in each field.
 
-
-| Field Name                        | % Populated      |      |
-|-----------------------------------|------------------|------|
-| Dependent variable                | Fraud label      | 100% |
-|                                   |                  |      |
-| Numerical Independent variables   | AMOUNT           | 100% |
-| Categorical Independent variables | CARDNUM          | 100% |
-|                                   | MERCHNUM         | 96%  |
-|                                   | MERCHDESCRIPTION | 100% |
-|                                   | MERCHSTATE       | 99%  |
-|                                   | TRANSTYPE        | 100% |
-|                                   | MERCHZIP         | 95%  |
-|                                   | DATE             | 100% |
-
-
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
-.tg .tg-baqh{text-align:center;vertical-align:top}
-</style>
-<table class="tg">
+<table>
   <tr>
-    <th class="tg-baqh">Field Name</th>
-    <th class="tg-baqh">% Populated</th>
-    <th class="tg-baqh"></th>
+    <th>Field Name</th>
+    <th>% Populated</th>
+    <th></th>
   </tr>
   <tr>
-    <td class="tg-baqh">Dependent variable</td>
-    <td class="tg-baqh">Fraud label</td>
-    <td class="tg-baqh">100%</td>
+    <td>Dependent variable</td>
+    <td>Fraud label</td>
+    <td>100%</td>
   </tr>
   <tr>
-    <td class="tg-baqh"></td>
-    <td class="tg-baqh"></td>
-    <td class="tg-baqh"></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="tg-baqh">Numerical Independent variables</td>
-    <td class="tg-baqh">AMOUNT</td>
-    <td class="tg-baqh">100%</td>
+    <td>Numerical Independent variables</td>
+    <td>AMOUNT</td>
+    <td>100%</td>
   </tr>
   <tr>
-    <td class="tg-baqh" rowspan="7">Categorical Independent variables</td>
-    <td class="tg-baqh">CARDNUM</td>
-    <td class="tg-baqh">100%</td>
+    <td rowspan="7">Categorical Independent variables</td>
+    <td>CARDNUM</td>
+    <td>100%</td>
   </tr>
   <tr>
-    <td class="tg-baqh">MERCHNUM</td>
-    <td class="tg-baqh">96%</td>
+    <td>MERCHNUM</td>
+    <td>96%</td>
   </tr>
   <tr>
-    <td class="tg-baqh">MERCHDESCRIPTION</td>
-    <td class="tg-baqh">100%</td>
+    <td>MERCHDESCRIPTION</td>
+    <td>100%</td>
   </tr>
   <tr>
-    <td class="tg-baqh">MERCHSTATE</td>
-    <td class="tg-baqh">99%</td>
+    <td>MERCHSTATE</td>
+    <td>99%</td>
   </tr>
   <tr>
-    <td class="tg-baqh">TRANSTYPE</td>
-    <td class="tg-baqh">100%</td>
+    <td>TRANSTYPE</td>
+    <td>100%</td>
   </tr>
   <tr>
-    <td class="tg-baqh">MERCHZIP</td>
-    <td class="tg-baqh">95%</td>
+    <td>MERCHZIP</td>
+    <td>95%</td>
   </tr>
   <tr>
-    <td class="tg-baqh">DATE</td>
-    <td class="tg-baqh">100%</td>
+    <td>DATE</td>
+    <td>100%</td>
   </tr>
 </table>
