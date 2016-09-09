@@ -143,11 +143,20 @@ We calculate fraud detective rate for each model in order to know which one perf
 
 We applied the same method to all the models and came up with the table below: 
 
-d1 ~ d10: down sample the goods from 1/1 goods-to-bads to 10/1 goods-to-bads.
-	
-Base: original training dataset, without down sample the goods, 25 independent variables
-	
-v2: dataset from project 2, 16 independent variables
+<table>
+  <tr>
+    <th>d1 ~ d10</th>
+    <th>down sample the goods from 1/1 goods-to-bads to 10/1 goods-to-bads.</th>
+  </tr>
+  <tr>
+    <td>Base</td>
+    <td>original training dataset, without down sample the goods, 25 independent variables</td>
+  </tr>
+  <tr>
+    <td>v2</td>
+    <td>dataset from project 2, 16 independent variables</td>
+  </tr>
+</table>
 
 We compared our models based on their FDR@3%, and did separate comparisons for our linear models and non-linear models. We compared them separately because our linear models have relatively low rates on training and testing, but scored very high in validation, but our non-linear models followed the expected pattern, with training and testing roughly the same and validation slightly lower. Due to time limits, we haven’t resolved the issue with our unexpectedly well-performed linear models, and we decided to go with our best performing non-linear model. Based on the comparison we made, KNN won the game.
 
