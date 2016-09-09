@@ -104,9 +104,11 @@ From our basic exploration of the data, a few findings may help guide further an
 ### Entities and Variables
 
 - Entities
+
 We divided the data mainly based on two entity levels: CARDNUM and MERCHNUM. Observing anomalies on these two entity levels may help account for the user differences among different card holders and different merchants. We also included STATE as an entity level, and observed the frequency of location changes for a given card on a given date.
 
 - Variables
+
 We added a total of 25 variables to model our data. Our intention is to find anomalies based on the number of transactions and the transaction amounts during a time frame. 
 
 For entities CARDNUM and MERCHNUM, we calculated the number of transactions, the total transaction amount, and the number of duplicates in amount value in a given time on each entity level. Due to the usual patterns of credit card fraud, we selected the time frame to be in the past 1, 2, 3, or 7 days. Since we are assuming that we have no knowledge of records that happened after each existing record, we standardized the number of transactions and total transaction amount by setting the activity on each entity level in the past 90 days as normal. For variables that convey information about duplicate transaction amounts, we standardized the variables by setting the total number of transactions in the given time frame on a certain entity level as base, and divided it by the number of transactions that have the same amount as the record at hand in that time frame and entity level. We multiplied this fraction by 100 to get the percentage value of transactions that have duplicate values as the current record. The higher this number is, the more likely duplicate amounts occurred.
