@@ -30,6 +30,11 @@ The data contains credit card transaction records, along with the card number, m
     <td>100%</td>
   </tr>
   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Numerical Independent variables</td>
     <td>AMOUNT</td>
     <td>100%</td>
